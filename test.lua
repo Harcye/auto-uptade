@@ -1,13 +1,13 @@
 local sp  = require 'lib.samp.events'
 update_state = false -- Если переменная == true, значит начнётся обновление.
 
-local script_vers = 1.1
-local script_vers_text = "v1.0" -- Название нашей версии. В будущем будем её выводить юзеру.
+local script_vers = 1.2
+local script_vers_text = "v1.1" -- Название нашей версии. В будущем будем её выводить юзеру.
 
-local update_url = 'https://raw.githubusercontent.com/Dev-Oleksandr/auto-update/main/update.ini' -- Путь к ini файлу. Позже нам понадобиться.
+local update_url = 'https://raw.githubusercontent.com/Harcye/auto-uptade/refs/heads/main/update.ini' -- Путь к ini файлу. Позже нам понадобиться.
 local update_path = getWorkingDirectory() .. "/update.ini"
 
-local script_url = 'https://github.com/Dev-Oleksandr/auto-update/blob/main/ManagementTools.luac?raw=true' -- Путь скрипту.
+local script_url = 'https://github.com/Harcye/auto-uptade/blob/main/test.lua' -- Путь скрипту.
 local script_path = thisScript().path
 
 
@@ -36,7 +36,7 @@ function sp.onSendCommand(input)
         lua_thread.create(function()
             downloadUrlToFile(script_url, script_path, function(id, status)
                 if status == dlstatus.STATUS_ENDDOWNLOADDATA then
-                    sampAddChatMessage("Скрипт успешно обновлен!", -1)
+                    sampAddChatMessage("Скрипт успешно обновлен до 2 версии пользователь !", -1)
                     thisScript():reload()
                 end
             end)
